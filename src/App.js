@@ -1,24 +1,27 @@
-import logo from './logo.svg';
+import React, {Fragment} from 'react';
+import Navbar from './components/navbar';
+import CoctelList from './components/CoctelList';
 import './App.css';
+import CoctelListDB from './components/CoctelListDB';
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Fragment>
+      <Navbar brand='Coctel App'/>
+      <div className='container-fluid'>
+        <div className='row'>
+          <div className='col-4'>
+            <p className='text fant' style={{textAlign: 'center'}}>Api Cocteles</p>
+            <CoctelList/>
+          </div>
+        <div className='col-8'>
+            <p className='fant' style={{textAlign: 'center'}}>Cocteles Guardados</p>
+            <CoctelListDB />
+          </div>
+        </div>
+      </div>
+    </Fragment>
   );
 }
 
